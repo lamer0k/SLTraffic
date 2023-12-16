@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!includesub iprogrammanager.puml!IProgramManagerSub
+!includesub iprogramconfigurator.puml!IProgramConfiguratorSub
+!includesub iprogramchangesubscriber.puml!IProgramChangeSubscriberSub
+!includesub iprogramconfigurationstorage.puml!IProgramConfigurationStorageSub
+!includesub ..\imodechangesubscriber.puml!IModeChangeSubscriberSub
+!includesub ..\diagnostic\idiagnostic.puml!IDiagnosticSub
+!includesub ..\datetimeclock\idatetimeclockmanager.puml!IDateTimeManagerSub
+
+
+!startsub ProgramManagerSub
+
+class ProgramManager
+{
+   -IProgram& mCurrentProgram
+   -IModeChangeSubscriber& mModeChangeSubscriber
+   -tProgramIndex currentProgramIndex
+}
+note top of ProgramManager
+  Класс отвечает за алгоритм
+  выбора программы, в зависимости
+  от диагностики(если есть ошибка
+  то переключает на программу ЖМ),
+  расписания (суточные, недельные
+  карты и особые дни года)
+
+  Начало работы с режимов ЖМ и КК
+
+  При обновлении программы текущий
+  цикл должен дорабатываться по старой
+
+  Выход из режима ЖМ по устранению причины
+
+  При старте прописывание в модули
+  цветов каналов согласно текущей
+  конфигурации
+end note
+!endsub
+
+ProgramManager -up-|> IProgramManager
+ProgramManager -up-|> IProgramConfigurator
+ProgramManager -up-|> IModeChangeSubscriber
+ProgramManager o-- IDiagnostic
+ProgramManager o-- IDateTimeManager
+ProgramManager o-- IProgramChangeSubscriber
+ProgramManager o-- IProgramConfigurationStorage
+
+
+@enduml

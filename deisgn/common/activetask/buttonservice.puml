@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!includesub ..\button\ibuttonmanager.puml!IButtonManagerSub
+!startsub ButtonServiceSub
+
+class ButtonService
+{
+   ..Priority..
+   Highest = 12
+   ..ActiveClass..
+   Класс задача РТОС,\nпериод опроса 50мс
+   ==
+   -IButtonManager& mButtonManager
+
+}
+
+
+note left of ButtonService
+  Класс отвечает за определение нажатия кнопок
+  включения режимов ОС (отключения светофора),
+  ЖМ (жёлтого мигания), КК (кругом красных)
+end note
+
+
+ButtonService --|> IThread
+ButtonService o-- IButtonManager
+!endsub
+@enduml

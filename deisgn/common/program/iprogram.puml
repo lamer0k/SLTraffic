@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!startsub IProgramSub
+
+interface IProgram
+{
+    void {abstract} NextTact()
+    void {abstract} Reset()
+
+}
+
+!endsub
+
+note left of IProgram
+  Отвечает за выполнение
+  программы в соответствии с
+  переданной конфигурацией
+  (каждый такт определяется
+  текущее состояние каждого
+  направления по программе и
+  в соответствии с таблицами
+  распределения каналов модулей
+  по направлениям и цветам
+  прописывается соответствующее
+  состояние по каждому каналу)
+end note
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!startsub IButtonManagerSub
+
+interface IButtonManager
+{
+    {abstract} void Proceed()
+}
+
+!endsub
+
+note left of IButtonManager
+  Отвечает за определение
+  об нажатии копок на
+  включения режимов
+end note
+
+@enduml

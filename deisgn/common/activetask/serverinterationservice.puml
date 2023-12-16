@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+!includesub ithread.puml!IThreadSub
+
+!startsub ServerInteractionServiceSub
+
+class ServiceInteractionService
+{
+   ..Priority..
+   Low = 2
+   ..ActiveClass..
+   Класс задача РТОС,\nпериод 0.5 сек
+
+   ==
+
+}
+note left of ServiceInteractionService
+  Класс отвечает за передачу информации
+  каждый такт на сервер и/или в
+  конфигуратор (при наличии соединения)
+  (сервер, как правило, является
+  TCP-сервером, а конфигуратор –
+  TCP-клиентом) и получение команд от них
+end note
+
+ServiceInteractionService --|> IThread
+
+
+!endsub
+
+@enduml

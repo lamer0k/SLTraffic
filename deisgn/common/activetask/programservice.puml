@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!includesub ithread.puml!IThreadSub
+!includesub ..\program\iprogrammanager.puml!IProgramManagerSub
+
+
+!startsub ProgramServiceSub
+
+class ProgramService
+{
+   ..Priority..
+   Highest = 10
+   ..ActiveClass..
+   Класс задача РТОС,\nпериод опроса 0.5 сек
+
+   ==
+
+}
+note left of ProgramService
+  Класс отвечает за работу по программе
+  (каждый такт определяется текущее состояние
+  каждого направления по программе и,
+  в соответствии с таблицами распределения
+  каналов модулей по направлениям и цветам
+  прописывается соответствующее состояние по
+  каждому каналу
+end note
+
+ProgramService -up-|> IThread
+ProgramService -up-|> IProgramService
+ProgramService o-- IProgramManager
+
+!endsub
+
+
+
+
+@enduml

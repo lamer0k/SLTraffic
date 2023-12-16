@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!includesub  idiagnostic.puml!IDiagnosticSub
+!includesub  idiagnosticmanager.puml!IDiagnosticManagerSub
+!includesub  ivoltagediagnosticsubscriber.puml!IVoltageDiagnosticSubscriberSub
+
+!startsub VoltageDiagnosticSub
+
+class VoltageDiagnostic
+{
+- IVoltageDiagnosticSubscriber& mBadVoltageSubscriber
+}
+!endsub
+
+VoltageDiagnostic -up-|> IDiagnostic
+VoltageDiagnostic -up-|> IDiagnosticManager
+
+note left of VoltageDiagnostic
+  Отвечает за определение снижения напряжения
+  сети ниже 150 В дольше 3 секунд и оповещает
+  подписчиков об этом
+end note
+
+@enduml

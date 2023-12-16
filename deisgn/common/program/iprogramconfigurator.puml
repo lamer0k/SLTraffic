@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+!startsub IProgramConfiguratorSub
+interface IProgramConfigurator
+{
+    {abstract} ReturnCode SetActiveProgram(tProgramIndex programIndex)
+
+}
+!endsub
+
+note left of IProgramConfigurator
+  Отвечает за смену активной программы,
+  например, когда пользователь переключил
+  на новую программу
+end note
+
+@enduml

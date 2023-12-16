@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!startsub IDiagnosticManagerSub
+
+interface IDiagnosticManager
+{
+    {abstract} void Check()
+}
+!endsub
+
+@enduml

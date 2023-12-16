@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!includesub ibuttonmanager.puml!IButtonManagerSub
+!includesub ..\imodechangesubscriber.puml!IModeChangeSubscriberSub
+
+!startsub ButtonManagerSub
+
+class ButtonManager<auto& ...subscribers>
+{
+    -array<IModeChangeSubscriber*, sizeof...subscribers> mButtonSubscribers
+}
+!endsub
+
+ButtonManager -up-|> IButtonManager
+ButtonManager o-- IModeChangeSubscriber
+
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!includesub ivariable.puml!IVariableSub
+
+class Power
+{
+}
+
+Power -up-|> IVariable
+
+@enduml

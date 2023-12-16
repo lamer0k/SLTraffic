@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!startsub IVariableSub
+
+interface IVariable
+{
+}
+
+!endsub
+
+@enduml

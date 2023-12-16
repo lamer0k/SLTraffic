@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+!includesub programservice.puml!ProgramServiceSub
+!includesub buttonservice.puml!ButtonServiceSub
+!includesub diagnosticservice.puml!DiagnosticServiceSub
+!includesub countdowndisplayservice.puml!CountDownDisplayServiceSub
+!includesub powermodulepollservice.puml!PowerModulePollServiceSub
+!includesub serverinterationservice.puml!ServerInteractionServiceSub
+
+
+'participant PowerModuleDiagnosticService as voltageDiagnostic
+'participant ServerInteractionService as serverInteraction
+'participant CountDownService as countdownService
+'participant SpectrProtocolService as spectrProtocol
+
+
+
+
+
+
+@enduml

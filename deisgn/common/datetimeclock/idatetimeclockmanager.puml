@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+!startsub IDateTimeManagerSub
+
+interface IDateTimeManager
+{
+    '{abstract} Date GetCurrentDate()
+    '{abstract} Time GetCurrentTime()
+    {abstract} HasDateTimeExpired(IProgram& program, Date date, Time time)
+}
+
+!endsub
+@enduml

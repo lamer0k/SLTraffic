@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!includesub ithread.puml!IThreadSub
+!includesub ..\powermodule\ipowermodulepolling.puml!IPowerModulePollingSub
+
+!startsub PowerModulePollServiceSub
+
+class PowerModulePollService
+{
+   ..Priority..
+   Highest = 11
+   ..ActiveClass..
+   Класс задача РТОС,\nпериод 0.5 сек
+
+   ==
+
+}
+note left of PowerModulePollService
+  Класс опрос силовых модулей.
+  обмен информацией каждый такт
+  (полсекунды) с силовыми модулями
+  (с защитного силового модуля
+  получается информация о
+  напряжении сети, а с остальных
+  о напряжениях и мощностях
+  нагрузок по каналам
+end note
+
+PowerModulePollService -up-|> IThread
+PowerModulePollService o-- IPowerModulePolling
+
+!endsub
+
+@enduml

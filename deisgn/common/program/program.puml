@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!includesub iprogram.puml!IProgramSub
+!startsub ProgramSub
+
+class Program
+{
+  - mConfiguration: ProgramConfiguration
+}
+
+
+!endsub
+
+Program -up-|> IProgram
+
+@enduml

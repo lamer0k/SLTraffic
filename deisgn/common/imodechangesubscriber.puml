@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!startsub IModeChangeSubscriberSub
+
+interface IModeChangeSubscriber
+{
+    {abstract} void OnTrafficLightOff()
+    {abstract} void OnYellowBlinking()
+    {abstract} void OnRedAround()
+}
+
+!endsub
+
+note left of IButtonSubscriber
+  Отвечает за оповещение
+  об нажатии копок на
+  включения режимов
+  ОС (отключения светофора),
+  ЖМ (жёлтого мигания),
+  КК (кругом красных)
+end note
+
+@enduml

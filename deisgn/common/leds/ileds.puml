@@ -1,0 +1,24 @@
+@startuml
+
+'https://plantuml.com/class-diagram
+
+
+'
+'!startsub ILedsSub
+'
+'interface ILeds
+'{
+'    {abstract} Update()
+'}
+'
+'!endsub
+'
+'note left of ILeds
+'  Отвечает за отображение
+'  режимов работы с
+'  помощью светодиодов
+'end note
+'
+'
+'
+@enduml

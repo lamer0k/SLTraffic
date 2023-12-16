@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!includesub ithread.puml!IThreadSub
+!includesub ..\diagnostic\idiagnostic.puml!IDiagnosticSub
+!startsub DiagnosticServiceSub
+
+class DiagnosticService
+{
+   ..Priority..
+   Highest = 9
+   ..ActiveClass..
+   Класс задача РТОС,\nпериод опроса 0.5 сек
+   ==
+   -IButtonManager& mButtonManager
+   -IDiagnostic& mainDiagnostic
+   -IDiagnostic& mVoltageDiagnostic
+}
+
+
+note left of DiagnosticService
+  Класс отвечает за диагностику
+  - снижение напряжения сети ниже 150 В дольше 3 секунд,
+  - отсутствие связи хотя бы с одним из используемых
+    в текущей программе модулей дольше 3 секунд,
+  - конфликт направлений по зелёным сигналам,
+  - одновременное включение красного и зелёного сигналов
+    по одному направлению,
+  - снижение мощности нагрузки на канале ниже минимальной,
+  - перегрузка по току,
+  - наличие напряжения на выключенном канале и
+  - отсутствие напряжения на включенном
+end note
+
+
+DiagnosticService -up-|> IThread
+DiagnosticService o-- IDiagnosticManager
+!endsub
+
+@enduml

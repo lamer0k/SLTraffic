@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!startsub CountDownDisplayServiceSub
+!includesub ithread.puml!IThreadSub
+
+class CountDownDisplayService
+{
+   ..Priority..
+   Lowest = 1
+   ..ActiveClass..
+   Класс задача РТОС,\nпериод опроса 1 сек
+
+   ==
+
+}
+
+note left of CountDownDisplayService
+  Управление обратным отсчётом светофоров
+  по дополнительному интерфейсу RS-485,
+  по протоколу «СПЕКТР» версии 2 (ЗАО «РИПАС»)
+  (принимаем, что номер группы ТООВ
+  (табло обратного отсчёта времени)
+  по протоколу – это номер направления)
+end note
+
+CountDownDisplayService --|> IThread
+
+!endsub
+
+@enduml
