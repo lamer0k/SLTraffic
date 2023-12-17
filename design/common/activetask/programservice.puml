@@ -13,7 +13,6 @@ class ProgramService
    Highest = 10
    ..ActiveClass..
    Класс задача РТОС,\nпериод опроса 0.5 сек
-
    ==
 
 }
