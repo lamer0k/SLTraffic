@@ -12,7 +12,7 @@ interface IModeChangeSubscriber
 
 !endsub
 
-note left of IButtonSubscriber
+note left of IModeChangeSubscriber
   Отвечает за оповещение
   об нажатии копок на
   включения режимов

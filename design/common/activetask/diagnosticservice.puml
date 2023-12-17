@@ -3,6 +3,7 @@
 
 !includesub ithread.puml!IThreadSub
 !includesub ..\diagnostic\idiagnostic.puml!IDiagnosticSub
+!includesub ..\diagnostic\idiagnosticsubscriber.puml!IDiagnosticSubscriberSub
 !startsub DiagnosticServiceSub
 
 class DiagnosticService
@@ -15,6 +16,7 @@ class DiagnosticService
    -IButtonManager& mButtonManager
    -IDiagnostic& mainDiagnostic
    -IDiagnostic& mVoltageDiagnostic
+   -array<IDiagnosticSubscriber*> mDiagnosticSubscribers
 }
 
 
@@ -34,7 +36,8 @@ end note
 
 
 DiagnosticService -up-|> IThread
-DiagnosticService o-- IDiagnosticManager
+DiagnosticService o-- IDiagnosticSubscriber
+DiagnosticService o-- IDiagnostic
 !endsub
 
 @enduml

@@ -4,15 +4,15 @@
 !includesub ..\imodechangesubscriber.puml!IModeChangeSubscriberSub
 !includesub ..\program\iprogramchangesubscriber.puml!IProgramChangeSubscriberSub
 
-!startsub LedsSub
+!startsub LedsControllerSub
 
-class Leds
+class LedsController
 {
 
 }
 
 !endsub
 
-Leds -up-|> IProgramChangeSubscriber
-Leds -up-|> IModeChangeSubscriber
+LedsController -up-|> IProgramChangeSubscriber
+LedsController -up-|> IModeChangeSubscriber
 @enduml

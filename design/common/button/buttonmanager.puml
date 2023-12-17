@@ -15,5 +15,12 @@ class ButtonManager<auto& ...subscribers>
 ButtonManager -up-|> IButtonManager
 ButtonManager o-- IModeChangeSubscriber
 
+note top of ButtonManager
+  Отвечает за определение
+  об нажатии копок на
+  включения режимов и оповещение
+  подписчиков через интерфейс
+  IModeChangeSubscriber
+end note
 
 @enduml

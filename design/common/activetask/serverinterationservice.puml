@@ -6,7 +6,7 @@
 
 !startsub ServerInteractionServiceSub
 
-class ServiceInteractionService
+class ServerInteractionService
 {
    ..Priority..
    Low = 2
@@ -16,7 +16,7 @@ class ServiceInteractionService
    ==
 
 }
-note left of ServiceInteractionService
+note left of ServerInteractionService
   Класс отвечает за передачу информации
   каждый такт на сервер и/или в
   конфигуратор (при наличии соединения)
@@ -25,7 +25,7 @@ note left of ServiceInteractionService
   TCP-клиентом) и получение команд от них
 end note
 
-ServiceInteractionService --|> IThread
+ServerInteractionService --|> IThread
 
 
 !endsub

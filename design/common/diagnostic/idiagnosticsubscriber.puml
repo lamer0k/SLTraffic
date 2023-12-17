@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+!startsub  IDiagnosticSubscriberSub
+
+interface IDiagnosticSubscriber
+{
+    {abstract} void OnAnyError()
+    {abstract} void OnGood()
+}
+
+!endsub
+
+@enduml

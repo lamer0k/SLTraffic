@@ -8,7 +8,6 @@
 !includesub powermodulepollservice.puml!PowerModulePollServiceSub
 !includesub serverinterationservice.puml!ServerInteractionServiceSub
 
-
 'participant PowerModuleDiagnosticService as voltageDiagnostic
 'participant ServerInteractionService as serverInteraction
 'participant CountDownService as countdownService

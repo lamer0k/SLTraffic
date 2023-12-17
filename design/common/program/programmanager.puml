@@ -6,9 +6,8 @@
 !includesub iprogramchangesubscriber.puml!IProgramChangeSubscriberSub
 !includesub iprogramconfigurationstorage.puml!IProgramConfigurationStorageSub
 !includesub ..\imodechangesubscriber.puml!IModeChangeSubscriberSub
-!includesub ..\diagnostic\idiagnostic.puml!IDiagnosticSub
+!includesub ..\diagnostic\idiagnosticsubscriber.puml!IDiagnosticSubscriberSub
 !includesub ..\datetimeclock\idatetimeclockmanager.puml!IDateTimeManagerSub
-
 
 !startsub ProgramManagerSub
 
@@ -42,7 +41,8 @@ end note
 ProgramManager -up-|> IProgramManager
 ProgramManager -up-|> IProgramConfigurator
 ProgramManager -up-|> IModeChangeSubscriber
-ProgramManager o-- IDiagnostic
+ProgramManager -up-|> IDiagnosticSubscriber
+
 ProgramManager o-- IDateTimeManager
 ProgramManager o-- IProgramChangeSubscriber
 ProgramManager o-- IProgramConfigurationStorage
